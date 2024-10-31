@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+	<script src="{{ url_for('static', filename='untruepoet.js') }}"></script>
+    <title>Poetry Generator</title>
+</head>
+<body>
+    <h1>Generate a Poem</h1>
+    <form id="poetry-form">
+        <label>Number of Lines</label>
+        <input type="number" id="num-lines" min="1" max="20" value="4">
+        
+        <label>Rhythm Erraticness</label>
+        <input type="range" id="erratic-rhythm" min="0" max="10" value="5">
+
+        <label>Rhyme Type</label>
+        <select id="rhyme-type">
+            <option value="perfect">Perfect</option>
+            <option value="slant">Slant</option>
+            <option value="none">None</option>
+        </select>
+
+        <label>Concreteness Level</label>
+        <input type="range" id="concreteness" min="0" max="10" value="5">
+
+        <label>Explicitness Rating</label>
+        <select id="rating">
+            <option value="G">G</option>
+            <option value="PG">PG</option>
+            <option value="PG-13">PG-13</option>
+            <option value="R">R</option>
+        </select>
+
+        <label>Seed</label>
+        <input type="text" id="seed" value="Give me a small idea or image to start with.">
+
+        <button type="button" onclick="generatePoem()">Generate Poem</button>
+    </form>
+    <div id="poem-output"></div>
+
+    <script src="static/untruepoet.js"></script>
+</body>
+</html>
